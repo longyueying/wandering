@@ -42,6 +42,7 @@ class Cifar10Dataset(Dataset):
         self.data = np.vstack(self.data).reshape(-1, 3, 32, 32)
         self.data = self.data.transpose((0, 2, 3, 1))
 
+
     def __len__(self):
         return len(self.data)
 

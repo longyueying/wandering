@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
 import math
-import pdb
 
 
 cfgs = {
@@ -56,6 +55,11 @@ class VGG(nn.Module):
         x = self.classifier(x)
         return x
 
+
+def vgg13():
+    features = make_layers(cfgs["A"])
+    vgg = VGG(features, 10)
+    return vgg
 
 if __name__ == "__main__":
     # test forward of vgg
